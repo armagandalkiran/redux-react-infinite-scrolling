@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useCallback, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { fetchCharacters } from "../../redux/charactersSlice";
 import Masonry from "react-masonry-css";
 import "./style.css";
@@ -16,7 +16,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const observer = useRef();
 
-  const lastCharacterElementRef = useCallback(node => {
+  const lastCharacterElementRef = (node) => {
     if(isLoading === "pending") return
     if(observer.current) observer.current.disconnect();
     observer.current = new IntersectionObserver(entries =>{
@@ -25,7 +25,7 @@ const Home = () => {
       }
     })
     if(node) observer.current.observe(node)
-  },[isLoading,hasNextPage,dispatch,nextPage])
+  }
 
   
 
