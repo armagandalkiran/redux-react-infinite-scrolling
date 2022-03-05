@@ -1,7 +1,7 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import axios from "axios";
 
-const pageLimit = 4;
+const pageLimit = 12;
 
 export const fetchCharacters = createAsyncThunk("characters/getCharacters", async (page) => {
     const res = await axios.get(`https://gateway.marvel.com/v1/public/characters?offset=${pageLimit * page}&limit=${pageLimit}`,{
@@ -29,7 +29,7 @@ export const charactersSlice = createSlice({
         },
         [fetchCharacters.fulfilled]: (state,action) => {
             state.isLoading = "fulfilled";
-            action.payload.length < 4 ? state.hasNextPage = false : state.hasNextPage = true;
+            action.payload.length < 12 ? state.hasNextPage = false : state.hasNextPage = true;
             state.items = [...state.items,...action.payload];
             state.page += 1;
         },
