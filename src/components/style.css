@@ -1,0 +1,37 @@
+.characters--loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color:white;
+}
+
+.characters--error {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color:white;
+}
+
+.characters--button {
+  padding: 1rem 1.2rem;
+  margin: 1.5rem;
+  border: 1px solid rgb(93, 173, 173);
+  border-radius: 10px;
+  cursor:pointer;
+  background-color: rgb(93, 173, 173);
+  color:white;
+}
+
+.characters--button:hover{
+  background-color: rgb(40, 119, 119);
+}
+
+.characters--nextpage-warning {
+  font-size: 3rem;
+  padding: 2rem;
+  margin-top: 20px;
+  color:white;
+}
